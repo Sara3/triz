@@ -1,4 +1,8 @@
+#demo
+https://www.loom.com/share/c1b212f82bac472fad5a9fdde88b4872?sid=00b2a523-9c95-4015-8585-39096c97d2fa
+
 # Patent Analytics Hub
+
 
 A comprehensive tool for patent analysis using TRIZ methodology, allowing users to upload, manage, and analyze patents with innovative problem-solving techniques.
 
