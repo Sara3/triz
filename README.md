@@ -13,6 +13,29 @@ This project consists of two main components:
 - **Frontend** (`/frontend`): A React-based web application built with TypeScript, Vite, and Tailwind CSS.
 - **Backend** (`/backend`): A Flask-based RESTful API for processing and analyzing patent data.
 
+## Environment Setup
+
+### Frontend Environment Variables
+
+Create a `.env` file in the `frontend` directory with the following variables:
+
+```
+VITE_API_BASE_URL=http://localhost:5000/api
+```
+
+### Backend Environment Variables
+
+Create a `.env` file in the `backend` directory with the following variables:
+
+```
+FLASK_ENV=development
+DEBUG=True
+SECRET_KEY=your_secret_key_here
+DATABASE_URL=sqlite:///data/patents.db
+```
+
+Make sure to replace `your_secret_key_here` with a secure random string.
+
 ## Quick Start
 
 The easiest way to run the full application is using the provided start script:

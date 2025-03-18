@@ -1,72 +1,37 @@
-# Welcome to your Lovable project
+# Patent Analytics Hub - Frontend
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/06e563a6-4423-4f38-899e-afc32d8a6bdb
+This is the frontend application for the Patent Analytics Hub, a comprehensive tool for patent analysis using TRIZ methodology. The application allows users to upload, manage, and analyze patents with innovative problem-solving techniques.
 
-## How can I edit this code?
+## Technologies Used
 
-There are several ways of editing your application.
+- React 
+- TypeScript
+- Vite
+- shadcn/ui
+- Tailwind CSS
 
-**Use Lovable**
+## Getting Started
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/06e563a6-4423-4f38-899e-afc32d8a6bdb) and start prompting.
+### Prerequisites
 
-Changes made via Lovable will be committed automatically to this repo.
+- Node.js & npm - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Navigate to the frontend directory
+cd frontend
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/06e563a6-4423-4f38-899e-afc32d8a6bdb) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+The frontend application will be available at http://localhost:5173
 
 ## Connecting to the Backend
 
@@ -111,14 +76,10 @@ If you prefer to start each service manually:
 
 2. In a separate terminal, start the frontend development server:
    ```bash
-   cd patent-analytics-hub
+   cd frontend
    npm install
    npm run dev
    ```
-
-3. The application will be available at:
-   - Frontend: http://localhost:5173
-   - Backend API: http://localhost:5000/api
 
 ### API Structure
 
@@ -152,3 +113,5 @@ python test_triz_api.py
 ```
 
 This will verify that all required API endpoints are working correctly.
+
+project link at lovable[https://lovable.dev/projects/06e563a6-4423-4f38-899e-afc32d8a6bdb]
