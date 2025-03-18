@@ -10,7 +10,7 @@ A comprehensive tool for patent analysis using TRIZ methodology, allowing users 
 
 This project consists of two main components:
 
-- **Frontend** (`/patent-analytics-hub`): A React-based web application built with TypeScript, Vite, and Tailwind CSS.
+- **Frontend** (`/frontend`): A React-based web application built with TypeScript, Vite, and Tailwind CSS.
 - **Backend** (`/backend`): A Flask-based RESTful API for processing and analyzing patent data.
 
 ## Quick Start
@@ -20,7 +20,7 @@ The easiest way to run the full application is using the provided start script:
 ```bash
 # From the project root directory
 python start_app.py
-#should should work but I needs debugging 
+#should should work but It needs debugging. intead just cd in the files 
 ```
 
 This script will:
@@ -48,7 +48,7 @@ python app.py
 ### Frontend Setup
 
 ```bash
-cd patent-analytics-hub
+cd frontend
 npm install
 npm run dev
 ```
@@ -88,7 +88,7 @@ python test_triz_api.py
 
 ## Additional Documentation
 
-- For frontend details, see: [Frontend README](patent-analytics-hub/README.md)
+- For frontend details, see: [Frontend README](frontend/README.md)
 - For backend details, see: [Backend README](backend/README.md)
 
 ## License
