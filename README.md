@@ -20,6 +20,7 @@ The easiest way to run the full application is using the provided start script:
 ```bash
 # From the project root directory
 python start_app.py
+#should should work but I needs debugging 
 ```
 
 This script will:
