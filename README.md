@@ -155,29 +155,6 @@ If you encounter errors with the frontend:
 - **Backend**: Django REST API for patent management and TRIZ analysis
 - **Frontend**: React web application for user interface
 
-### Key Components
-
-#### AnalysisViewer Component
-
-The `AnalysisViewer` component provides a detailed interface for reviewing and editing TRIZ contradictions extracted from patents:
-
-- **Features**:
-  - View detailed TRIZ contradictions with improving and worsening parameters
-  - Edit contradictions and principles interactively
-  - Add new contradictions and principles
-  - Review and approve analysis results
-  - View detailed information about suggested TRIZ principles
-
-- **Usage**:
-  ```jsx
-  <AnalysisViewer
-    analysis={analysisData}
-    patent={patentData}
-    onReviewComplete={() => console.log('Analysis reviewed')}
-  />
-  ```
-
-- **Location**: `frontend/src/components/AnalysisViewer.tsx`
 
 ## Project Structure
 
