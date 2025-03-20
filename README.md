@@ -1,3 +1,4 @@
+demo https://www.loom.com/share/210f9f881d8340bbaa79e7abb3c919f3
 # Patent Analytics Hub
 
 A patent analysis tool using TRIZ methodology to extract technical contradictions and suggest innovative solutions.
