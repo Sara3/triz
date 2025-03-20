@@ -1,119 +1,84 @@
-#demo
-https://www.loom.com/share/c1b212f82bac472fad5a9fdde88b4872?sid=00b2a523-9c95-4015-8585-39096c97d2fa
-
 # Patent Analytics Hub
 
-
-A comprehensive tool for patent analysis using TRIZ methodology, allowing users to upload, manage, and analyze patents with innovative problem-solving techniques.
-
-## Project Structure
-
-This project consists of two main components:
-
-- **Frontend** (`/frontend`): A React-based web application built with TypeScript, Vite, and Tailwind CSS.
-- **Backend** (`/backend`): A Flask-based RESTful API for processing and analyzing patent data.
-
-## Environment Setup
-
-### Frontend Environment Variables
-
-Create a `.env` file in the `frontend` directory with the following variables:
-
-```
-VITE_API_BASE_URL=http://localhost:5000/api
-```
-
-### Backend Environment Variables
-
-Create a `.env` file in the `backend` directory with the following variables:
-
-```
-FLASK_ENV=development
-DEBUG=True
-SECRET_KEY=your_secret_key_here
-DATABASE_URL=sqlite:///data/patents.db
-```
-
-Make sure to replace `your_secret_key_here` with a secure random string.
+A patent analysis tool using TRIZ methodology to extract technical contradictions and suggest innovative solutions.
 
 ## Quick Start
 
-The easiest way to run the full application is using the provided start script:
+### Using Docker (Recommended)
 
-```bash
-# From the project root directory
-python start_app.py
-#should should work but It needs debugging. intead just cd in the files 
+#### Prerequisites
+- [Docker](https://www.docker.com/products/docker-desktop/) and Docker Compose installed
+
+#### Steps
+
+1. Clone the repository
+   ```bash
+   git clone <repository-url>
+   cd capstone_v2
+   ```
+
+2. Start the application
+   ```bash
+   docker-compose up
+   ```
+
+3. Access the application
+   - Frontend: http://localhost:5173
+   - Backend API: http://localhost:8000/api/
+
+4. Stop the application
+   ```bash
+   docker-compose down
+   ```
+
+### Manual Setup
+
+If you prefer not to use Docker:
+
+#### Prerequisites
+- Python 3.8+ with pip
+- Node.js 16+ with npm (must be in your PATH)
+
+#### Windows (PowerShell)
+```powershell
+.\start.ps1
 ```
 
-This script will:
-1. Start the backend Flask server
-2. Start the frontend development server
-3. Open the application in your default browser
-4. Handle proper shutdown of both servers when you press Ctrl+C
-
-The application will be available at:
-- Frontend: http://localhost:5173
-- Backend API: http://localhost:5000/api
-
-## Manual Setup
-
-If you prefer to start each component individually:
-
-### Backend Setup
-
+#### macOS/Linux
 ```bash
-cd backend
-pip install -r requirements.txt
-python app.py
+./start.sh
 ```
 
-### Frontend Setup
-
+#### Python (Cross-platform)
 ```bash
-cd frontend
-npm install
-npm run dev
+python start.py
 ```
 
-## Testing
+## Troubleshooting
 
-### API Testing
+### Node.js/npm Issues
+If you encounter errors when running `python start.py` related to npm:
+1. Ensure Node.js and npm are installed and in your PATH
+2. Verify installation by running `npm --version` in your terminal
+3. If not installed, download from [nodejs.org](https://nodejs.org/)
 
-```bash
-cd backend
-pip install requests
-python test_triz_api.py
+### Docker Issues
+If Docker doesn't start:
+1. Verify Docker Desktop is running
+2. Check Docker Compose is installed with `docker-compose --version`
+3. Ensure ports 8000 and 5173 are available
+
+## Components
+
+- **Backend**: Django REST API for patent management and TRIZ analysis
+- **Frontend**: React web application for user interface
+
+## Project Structure
+
 ```
-
-## Features
-
-- **TRIZ Methodology Integration**: Browse and apply the 40 TRIZ principles for innovative problem-solving
-- **Patent Management**: Upload, view, and organize patent documents
-- **Analysis Tools**: Analyze patents using TRIZ contradiction matrix and engineering parameters
-- **Visualization**: Visual representation of patent analyses and relationships
-
-## Core Technologies
-
-### Frontend
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- shadcn/ui
-- React Query
-
-### Backend
-- Python
-- Flask
-- Flask-CORS
-- SQLite (for development)
-
-## Additional Documentation
-
-- For frontend details, see: [Frontend README](frontend/README.md)
-- For backend details, see: [Backend README](backend/README.md)
-
-## License
-
-MIT License 
+capstone_v2/
+├── backend/          # Django backend
+├── frontend/         # React frontend
+├── docker-compose.yml
+└── start scripts
+```

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
@@ -11,9 +10,62 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { getPatentById, getPatentAnalysisById, getPrincipleByName } from '@/lib/mock-data';
+import { getPrincipleByName } from '@/lib/mock-data';
 import { useToast } from "@/hooks/use-toast";
 import { cn } from '@/lib/utils';
+
+// Mock data for patent review
+const getPatentById = (id: string) => {
+  // Mock patent data
+  return {
+    id: '1',
+    patent_number: 'US10123456B2',
+    filename: 'medical_device_patent.pdf',
+    title: 'Smart Medical Device for Patient Monitoring',
+    filing_date: '2019-05-12',
+    upload_date: '2023-06-15',
+    raw_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    abstract: 'A smart medical device for monitoring patient vital signs with improved accuracy and reduced power consumption.',
+    inventor: 'John Smith, Jane Doe',
+    assignee: 'MedTech Innovations, Inc.',
+    is_prior_art: false,
+    is_competitor: true,
+    keywords: 'patient monitoring, vital signs, low power, wireless',
+    status: 'analyzed'
+  };
+};
+
+const getPatentAnalysisById = (id: string) => {
+  // Mock analysis data
+  return {
+    id: '1',
+    patent_id: '1',
+    extracted_data: {
+      contradictions: [
+        {
+          contradiction: {
+            improving_parameter: 'Accuracy of measurement',
+            worsening_parameter: 'Power consumption'
+          },
+          suggested_principles: ['Segmentation', 'Intermediary', 'Periodic action']
+        },
+        {
+          contradiction: {
+            improving_parameter: 'Device complexity',
+            worsening_parameter: 'Ease of manufacture'
+          },
+          suggested_principles: ['Nesting', 'Preliminary action', 'Universality']
+        }
+      ]
+    },
+    confidence_score: 0.87,
+    review_status: 'approved',
+    extraction_version: '1.0',
+    analysis_date: '2023-06-16',
+    feedback_date: '2023-06-18',
+    user_feedback: 'Extraction is accurate. Added additional context to the second contradiction.'
+  };
+};
 
 const PatentReviewDetail = () => {
   const { id } = useParams();

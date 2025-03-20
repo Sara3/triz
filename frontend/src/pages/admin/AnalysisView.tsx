@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, FileText, AlertCircle } from 'lucide-react';
@@ -8,7 +7,28 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { toast } from "sonner";
 import AnalysisViewer from '@/components/ui-custom/AnalysisViewer';
 import { getAnalysisById, storeAnalysisResult } from '@/lib/triz-utils';
-import { MOCK_PATENTS } from '@/lib/mock-data';
+
+// Local mock patents data for analysis view
+const MOCK_PATENTS = [
+  {
+    id: '1',
+    patent_number: 'US10123456B2',
+    title: 'Smart Medical Device for Patient Monitoring',
+    status: 'analyzed'
+  },
+  {
+    id: '2',
+    patent_number: 'US10234567B2',
+    title: 'Minimally Invasive Surgical Tool with Enhanced Dexterity',
+    status: 'reviewed'
+  },
+  {
+    id: '4',
+    patent_number: 'US10456789B2',
+    title: 'Implantable Medical Device with Extended Battery Life',
+    status: 'analyzed'
+  }
+];
 
 const AnalysisView: React.FC = () => {
   const { analysisId } = useParams<{ analysisId: string }>();

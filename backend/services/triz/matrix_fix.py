@@ -13,9 +13,7 @@ TRIZ_DATA_DIR = os.path.join(BASE_DIR, "data", "triz")
 os.makedirs(TRIZ_DATA_DIR, exist_ok=True)
 
 # Create mock engineering parameters
-parameters = {
-    str(i): f"Parameter {i}" for i in range(1, 40)
-}
+parameters = {str(i): f"Parameter {i}" for i in range(1, 40)}
 
 # Define the real names for parameters
 real_names = [
@@ -57,7 +55,7 @@ real_names = [
     "Device complexity",
     "Difficulty of detecting and measuring",
     "Extent of automation",
-    "Productivity"
+    "Productivity",
 ]
 
 # Update parameters with real names
@@ -72,25 +70,25 @@ for i in range(1, 40):
         # Skip diagonal cells
         if i == j:
             continue
-        
+
         # Add random principles for each cell (between 0-4 principles)
         if random.random() < 0.7:  # 70% chance of having principles
             num_principles = random.randint(1, 4)
             principles = random.sample(range(1, 41), num_principles)
             row[str(j)] = principles
-    
+
     if row:  # Only add non-empty rows
         matrix[str(i)] = row
 
 # Save the matrix to a JSON file
 matrix_file = os.path.join(TRIZ_DATA_DIR, "matrix.json")
-with open(matrix_file, 'w') as f:
+with open(matrix_file, "w") as f:
     json.dump(matrix, f, indent=2)
 
 # Save the parameters to a JSON file
 params_file = os.path.join(TRIZ_DATA_DIR, "parameters.json")
-with open(params_file, 'w') as f:
+with open(params_file, "w") as f:
     json.dump(parameters, f, indent=2)
 
 print(f"Mock data created:\n- Matrix: {matrix_file}\n- Parameters: {params_file}")
-print(f"Matrix has {sum(len(row) for row in matrix.values())} cells with principles") 
+print(f"Matrix has {sum(len(row) for row in matrix.values())} cells with principles")

@@ -19,8 +19,8 @@ principles = {
         "examples": [
             "Sectional furniture",
             "Modular computer components",
-            "Sectional sofa"
-        ]
+            "Sectional sofa",
+        ],
     },
     "2": {
         "name": "Taking out",
@@ -28,8 +28,8 @@ principles = {
         "examples": [
             "Noise absorption in a quiet room",
             "Use of a sound-absorbing ceiling",
-            "Removing seeds from fruits"
-        ]
+            "Removing seeds from fruits",
+        ],
     },
     "3": {
         "name": "Local quality",
@@ -37,8 +37,8 @@ principles = {
         "examples": [
             "Gradient temperature tools",
             "Composite materials",
-            "Pencil with eraser"
-        ]
+            "Pencil with eraser",
+        ],
     },
     "4": {
         "name": "Asymmetry",
@@ -46,8 +46,8 @@ principles = {
         "examples": [
             "Asymmetric mixing vessels",
             "Ergonomic handles",
-            "Asymmetric tire tread for better traction"
-        ]
+            "Asymmetric tire tread for better traction",
+        ],
     },
     "5": {
         "name": "Merging",
@@ -55,9 +55,9 @@ principles = {
         "examples": [
             "Personal computer with multiple functions",
             "Multi-function printer/scanner/copier",
-            "Swiss Army knife"
-        ]
-    }
+            "Swiss Army knife",
+        ],
+    },
 }
 
 # Add remaining principles with simplified data
@@ -65,13 +65,13 @@ for i in range(6, 41):
     principles[str(i)] = {
         "name": f"Principle {i}",
         "description": f"Description for TRIZ principle {i}",
-        "examples": [f"Example 1 for principle {i}", f"Example 2 for principle {i}"]
+        "examples": [f"Example 1 for principle {i}", f"Example 2 for principle {i}"],
     }
 
 # Save the principles to a JSON file
 principles_file = os.path.join(TRIZ_DATA_DIR, "principles.json")
-with open(principles_file, 'w') as f:
+with open(principles_file, "w") as f:
     json.dump(principles, f, indent=2)
 
 print(f"Mock principles data created: {principles_file}")
-print(f"Created {len(principles)} TRIZ principles") 
+print(f"Created {len(principles)} TRIZ principles")

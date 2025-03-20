@@ -1,62 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Search } from 'lucide-react';
+import { ArrowLeft, Search, RefreshCw } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getTrizPrinciples } from '@/lib/api';
+import { getTrizPrinciples, TrizPrinciple } from '@/lib/api';
 import { Spinner } from '@/components/ui/spinner';
 import { Alert, AlertDescription } from "@/components/ui/alert";
-
-// Define TypeScript interface for TRIZ Principle
-interface TrizPrinciple {
-  id: string;
-  name: string;
-  description: string;
-  examples: string[];
-}
+import { useQuery } from '@tanstack/react-query';
 
 const TrizPrinciples = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [principles, setPrinciples] = useState<TrizPrinciple[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   
-  useEffect(() => {
-    const fetchPrinciples = async () => {
-      try {
-        setLoading(true);
-        const data = await getTrizPrinciples();
-        
-        // Transform data into array format
-        const principlesArray = Object.entries(data).map(([id, details]: [string, any]) => ({
-          id,
-          name: details.name,
-          description: details.description,
-          examples: details.examples || []
-        }));
-        
-        setPrinciples(principlesArray);
-        setError(null);
-      } catch (err) {
-        console.error('Error fetching TRIZ principles:', err);
-        setError('Failed to load TRIZ principles. Please try again later.');
-      } finally {
-        setLoading(false);
-      }
-    };
-    
-    fetchPrinciples();
-  }, []);
+  // Use React Query to fetch TRIZ principles
+  const { 
+    data = [], 
+    isLoading, 
+    isError, 
+    error,
+    refetch 
+  } = useQuery({
+    queryKey: ['triz-principles'],
+    queryFn: async () => {
+      const response = await getTrizPrinciples();
+      return response.data || [];
+    }
+  });
+  
+  // Safely access principles with the correct type
+  const principles: TrizPrinciple[] = Array.isArray(data) ? data : [];
   
   // Filter principles based on search term
-  const filteredPrinciples = principles.filter(principle => 
-    principle.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    principle.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    (principle.examples && principle.examples.some(ex => 
-      typeof ex === 'string' && ex.toLowerCase().includes(searchTerm.toLowerCase())
-    ))
-  );
+  const filteredPrinciples = principles.filter(principle => {
+    const nameMatch = principle.name?.toLowerCase().includes(searchTerm.toLowerCase()) || false;
+    const descriptionMatch = principle.description?.toLowerCase().includes(searchTerm.toLowerCase()) || false;
+    
+    let examplesMatch = false;
+    if (Array.isArray(principle.examples)) {
+      examplesMatch = principle.examples.some(
+        ex => typeof ex === 'string' && ex.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    
+    return nameMatch || descriptionMatch || examplesMatch;
+  });
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -94,19 +81,22 @@ const TrizPrinciples = () => {
             />
           </div>
           
-          {loading ? (
+          {isLoading ? (
             <div className="flex justify-center items-center py-12">
               <Spinner className="h-8 w-8" />
               <span className="ml-2">Loading principles...</span>
             </div>
-          ) : error ? (
+          ) : isError ? (
             <Alert variant="destructive" className="my-4">
-              <AlertDescription>{error}</AlertDescription>
+              <AlertDescription>
+                {error instanceof Error ? error.message : 'Failed to load TRIZ principles. Please try again later.'}
+              </AlertDescription>
               <Button 
                 variant="outline" 
                 className="mt-4"
-                onClick={() => window.location.reload()}
+                onClick={() => refetch()}
               >
+                <RefreshCw className="h-4 w-4 mr-2" />
                 Retry
               </Button>
             </Alert>
@@ -116,12 +106,12 @@ const TrizPrinciples = () => {
                 <Card key={principle.id} id={`principle-${principle.id}`}>
                   <CardHeader className="pb-2">
                     <CardTitle className="text-lg">
-                      {principle.id}. {principle.name}
+                      {principle.number}. {principle.name}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="mb-3">{principle.description}</p>
-                    {principle.examples && principle.examples.length > 0 && (
+                    {Array.isArray(principle.examples) && principle.examples.length > 0 && (
                       <div>
                         <h4 className="font-medium text-sm mb-2">Examples:</h4>
                         <ul className="list-disc pl-5 space-y-1">
@@ -137,7 +127,7 @@ const TrizPrinciples = () => {
             </div>
           )}
           
-          {!loading && !error && filteredPrinciples.length === 0 && (
+          {!isLoading && !isError && filteredPrinciples.length === 0 && (
             <div className="text-center py-12">
               <p className="text-muted-foreground">No principles match your search criteria.</p>
               <Button 

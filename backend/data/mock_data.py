@@ -15,8 +15,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Replace a large truck with a truck and trailer",
             "Use a work breakdown structure for a large project",
-            "Sectional furniture, modular electronics"
-        ]
+            "Sectional furniture, modular electronics",
+        ],
     },
     "2": {
         "name": "Taking out/Extraction",
@@ -24,8 +24,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Locate a noisy compressor outside the building where compressed air is used",
             "Use fiber optics to extract light from a source for remote viewing",
-            "Extract essential oils from plants for perfumes"
-        ]
+            "Extract essential oils from plants for perfumes",
+        ],
     },
     "3": {
         "name": "Local quality",
@@ -33,8 +33,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Pencil erasers, multi-function tools",
             "Garden hose with adjustable nozzle for different sprays",
-            "Use a temperature gradient instead of a constant temperature"
-        ]
+            "Use a temperature gradient instead of a constant temperature",
+        ],
     },
     "4": {
         "name": "Asymmetry",
@@ -42,8 +42,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Asymmetrical mixing vessels or asymmetrical vanes in symmetrical vessels",
             "Ergonomic handles designed to match the hand",
-            "Asymmetrical car tires for better traction"
-        ]
+            "Asymmetrical car tires for better traction",
+        ],
     },
     "5": {
         "name": "Merging/Consolidation",
@@ -51,9 +51,9 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Personal computers in a network",
             "Thousands of microprocessors in a parallel processor computer",
-            "Vanes in a ventilation system"
-        ]
-    }
+            "Vanes in a ventilation system",
+        ],
+    },
 }
 
 # Engineering Parameters
@@ -72,26 +72,26 @@ ENGINEERING_PARAMETERS = {
     "12": "Shape",
     "13": "Stability of the object's composition",
     "14": "Strength",
-    "15": "Duration of action of moving object"
+    "15": "Duration of action of moving object",
 }
 
 # TRIZ Contradiction Matrix (simplified)
 TRIZ_MATRIX = {
     "1": {  # Improving parameter 1 (Weight of moving object)
         "2": ["8", "10", "36", "37"],  # Worsening parameter 2
-        "3": ["15", "29", "34"],       # Worsening parameter 3
-        "4": ["28", "35"]              # Worsening parameter 4
+        "3": ["15", "29", "34"],  # Worsening parameter 3
+        "4": ["28", "35"],  # Worsening parameter 4
     },
     "2": {  # Improving parameter 2 (Weight of stationary object)
         "1": ["10", "1", "29", "35"],  # Worsening parameter 1
         "3": ["35", "3", "24", "37"],  # Worsening parameter 3
-        "5": ["10", "28", "24", "35"]  # Worsening parameter 5
+        "5": ["10", "28", "24", "35"],  # Worsening parameter 5
     },
     "3": {  # Improving parameter 3 (Length of moving object)
         "1": ["8", "15", "29", "34"],  # Worsening parameter 1
-        "2": ["15", "17", "4"],        # Worsening parameter 2
-        "9": ["17", "15", "13", "16"]  # Worsening parameter 9
-    }
+        "2": ["15", "17", "4"],  # Worsening parameter 2
+        "9": ["17", "15", "13", "16"],  # Worsening parameter 9
+    },
 }
 
 # Patents Mock Data
@@ -117,7 +117,7 @@ PATENTS = [
         "abstract": "A smart medical device for monitoring patient vital signs with improved accuracy and reduced power consumption.",
         "inventor": "John Smith, Jane Doe",
         "assignee": "MedTech Innovations, Inc.",
-        "status": "analyzed"
+        "status": "analyzed",
     },
     {
         "id": "PAT234567",
@@ -140,7 +140,7 @@ PATENTS = [
         "abstract": "A surgical tool designed for minimally invasive procedures with enhanced dexterity and precision while maintaining a compact form factor.",
         "inventor": "Robert Johnson, Sarah Williams",
         "assignee": "Surgical Precision, LLC",
-        "status": "reviewed"
+        "status": "reviewed",
     },
     {
         "id": "PAT345678",
@@ -163,8 +163,8 @@ PATENTS = [
         "abstract": "An advanced diagnostic imaging system that provides high-resolution images while significantly reducing patient radiation exposure.",
         "inventor": "Maria Garcia, David Chen",
         "assignee": "Imaging Solutions, Inc.",
-        "status": "pending"
-    }
+        "status": "pending",
+    },
 ]
 
 # Patent Analysis Mock Data
@@ -173,68 +173,113 @@ PATENT_ANALYSES = [
         "id": "ANA123456",
         "patent_id": "PAT123456",
         "analysis_date": datetime.datetime(2023, 6, 20),
-        "extracted_data": json.dumps({
-            "triz_contradictions": [
-                {
-                    "improving": "9",  # Speed
-                    "worsening": "10",  # Force/Energy
-                    "principles": ["15", "35", "2"]  # Dynamicity, Parameter change, Extraction
-                },
-                {
-                    "improving": "14",  # Strength
-                    "worsening": "1",   # Weight of moving object
-                    "principles": ["27", "3", "15", "40"]  # Cheap disposable objects, Local quality, Dynamicity, Composite materials
-                }
-            ],
-            "key_problems": ["Power consumption vs monitoring accuracy", "Device size vs battery life"],
-            "innovative_solutions": ["Dynamic sampling rate based on patient condition", "Miniaturized sensor array with specialized power management"]
-        }),
+        "extracted_data": json.dumps(
+            {
+                "triz_contradictions": [
+                    {
+                        "improving": "9",  # Speed
+                        "worsening": "10",  # Force/Energy
+                        "principles": [
+                            "15",
+                            "35",
+                            "2",
+                        ],  # Dynamicity, Parameter change, Extraction
+                    },
+                    {
+                        "improving": "14",  # Strength
+                        "worsening": "1",  # Weight of moving object
+                        "principles": [
+                            "27",
+                            "3",
+                            "15",
+                            "40",
+                        ],  # Cheap disposable objects, Local quality, Dynamicity, Composite materials
+                    },
+                ],
+                "key_problems": [
+                    "Power consumption vs monitoring accuracy",
+                    "Device size vs battery life",
+                ],
+                "innovative_solutions": [
+                    "Dynamic sampling rate based on patient condition",
+                    "Miniaturized sensor array with specialized power management",
+                ],
+            }
+        ),
         "feedback_date": datetime.datetime(2023, 7, 1),
-        "user_feedback": json.dumps({
-            "accuracy": 4.5,
-            "completeness": 4.0,
-            "suggestions": "Consider adding principles related to periodic action (19) for the power management aspect."
-        }),
-        "status": "approved"
+        "user_feedback": json.dumps(
+            {
+                "accuracy": 4.5,
+                "completeness": 4.0,
+                "suggestions": "Consider adding principles related to periodic action (19) for the power management aspect.",
+            }
+        ),
+        "status": "approved",
     },
     {
         "id": "ANA234567",
         "patent_id": "PAT234567",
         "analysis_date": datetime.datetime(2023, 7, 15),
-        "extracted_data": json.dumps({
-            "triz_contradictions": [
-                {
-                    "improving": "12",  # Shape
-                    "worsening": "7",   # Volume of moving object
-                    "principles": ["1", "4", "7", "35"]  # Segmentation, Asymmetry, Nested dolls, Parameter change
-                }
-            ],
-            "key_problems": ["Tool dexterity vs size constraints", "Control precision vs mechanical complexity"],
-            "innovative_solutions": ["Segmented shaft with microactuators", "Novel joint mechanism for increased degrees of freedom"]
-        }),
+        "extracted_data": json.dumps(
+            {
+                "triz_contradictions": [
+                    {
+                        "improving": "12",  # Shape
+                        "worsening": "7",  # Volume of moving object
+                        "principles": [
+                            "1",
+                            "4",
+                            "7",
+                            "35",
+                        ],  # Segmentation, Asymmetry, Nested dolls, Parameter change
+                    }
+                ],
+                "key_problems": [
+                    "Tool dexterity vs size constraints",
+                    "Control precision vs mechanical complexity",
+                ],
+                "innovative_solutions": [
+                    "Segmented shaft with microactuators",
+                    "Novel joint mechanism for increased degrees of freedom",
+                ],
+            }
+        ),
         "feedback_date": None,
         "user_feedback": None,
-        "status": "pending"
+        "status": "pending",
     },
     {
         "id": "ANA345678",
         "patent_id": "PAT345678",
         "analysis_date": datetime.datetime(2023, 8, 10),
-        "extracted_data": json.dumps({
-            "triz_contradictions": [
-                {
-                    "improving": "27",  # Reliability
-                    "worsening": "31",  # Harmful side effects
-                    "principles": ["22", "21", "27", "39"]  # Convert harm to benefit, Skip, Cheap disposable, Inert atmosphere
-                }
-            ],
-            "key_problems": ["Image quality vs radiation exposure", "Detection sensitivity vs system cost"],
-            "innovative_solutions": ["Non-uniform detector array pattern", "Machine learning enhanced image processing"]
-        }),
+        "extracted_data": json.dumps(
+            {
+                "triz_contradictions": [
+                    {
+                        "improving": "27",  # Reliability
+                        "worsening": "31",  # Harmful side effects
+                        "principles": [
+                            "22",
+                            "21",
+                            "27",
+                            "39",
+                        ],  # Convert harm to benefit, Skip, Cheap disposable, Inert atmosphere
+                    }
+                ],
+                "key_problems": [
+                    "Image quality vs radiation exposure",
+                    "Detection sensitivity vs system cost",
+                ],
+                "innovative_solutions": [
+                    "Non-uniform detector array pattern",
+                    "Machine learning enhanced image processing",
+                ],
+            }
+        ),
         "feedback_date": None,
         "user_feedback": None,
-        "status": "new"
-    }
+        "status": "new",
+    },
 ]
 
 # Patent Citations Mock Data
@@ -244,33 +289,34 @@ PATENT_CITATIONS = [
         "patent_id": "PAT123456",
         "cited_patent_number": "US9876543B2",
         "citation_context": "Referenced for its power management techniques in wearable devices",
-        "citation_date": datetime.datetime(2019, 4, 10)
+        "citation_date": datetime.datetime(2019, 4, 10),
     },
     {
         "id": 2,
         "patent_id": "PAT123456",
         "cited_patent_number": "US9765432B1",
         "citation_context": "Referenced for sensor array configuration",
-        "citation_date": datetime.datetime(2019, 4, 10)
+        "citation_date": datetime.datetime(2019, 4, 10),
     },
     {
         "id": 3,
         "patent_id": "PAT234567",
         "cited_patent_number": "US9654321B2",
         "citation_context": "Referenced for articulating joint mechanisms",
-        "citation_date": datetime.datetime(2020, 1, 15)
+        "citation_date": datetime.datetime(2020, 1, 15),
     },
     {
         "id": 4,
         "patent_id": "PAT345678",
         "cited_patent_number": "US9543210B2",
         "citation_context": "Referenced for detector array design",
-        "citation_date": datetime.datetime(2021, 8, 5)
-    }
+        "citation_date": datetime.datetime(2021, 8, 5),
+    },
 ]
+
 
 # Helper function to serialize datetime objects
 def serialize_datetime(obj):
     if isinstance(obj, datetime.datetime):
         return obj.isoformat()
-    raise TypeError("Type not serializable") 
+    raise TypeError("Type not serializable")

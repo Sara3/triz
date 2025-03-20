@@ -11,8 +11,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Sectional furniture",
             "Modular computer components",
-            "Sectional sofa"
-        ]
+            "Sectional sofa",
+        ],
     },
     2: {
         "name": "Taking out",
@@ -20,8 +20,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Noise absorption in a quiet room",
             "Use of a sound-absorbing ceiling",
-            "Removing seeds from fruits"
-        ]
+            "Removing seeds from fruits",
+        ],
     },
     3: {
         "name": "Local quality",
@@ -29,8 +29,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Gradient temperature tools",
             "Composite materials",
-            "Pencil with eraser"
-        ]
+            "Pencil with eraser",
+        ],
     },
     4: {
         "name": "Asymmetry",
@@ -38,8 +38,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Asymmetric mixing vessels",
             "Ergonomic handles",
-            "Asymmetric tire tread for better traction"
-        ]
+            "Asymmetric tire tread for better traction",
+        ],
     },
     5: {
         "name": "Merging",
@@ -47,8 +47,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Personal computer with multiple functions",
             "Multi-function printer/scanner/copier",
-            "Swiss Army knife"
-        ]
+            "Swiss Army knife",
+        ],
     },
     6: {
         "name": "Universality",
@@ -56,8 +56,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Sofa that converts to a bed",
             "Child's car safety seat that converts to a stroller",
-            "Multifunction power tools"
-        ]
+            "Multifunction power tools",
+        ],
     },
     7: {
         "name": "Nested doll",
@@ -65,8 +65,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Telescoping antenna",
             "Retractable pen",
-            "Nesting tables or measuring cups"
-        ]
+            "Nesting tables or measuring cups",
+        ],
     },
     8: {
         "name": "Anti-weight",
@@ -74,8 +74,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Hydrofoil",
             "Aircraft wing design",
-            "Helium balloons to support structures"
-        ]
+            "Helium balloons to support structures",
+        ],
     },
     9: {
         "name": "Preliminary anti-action",
@@ -83,8 +83,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Buffer solution to prevent rapid pH change",
             "Pre-stressing concrete",
-            "Preheating metal before deformation"
-        ]
+            "Preheating metal before deformation",
+        ],
     },
     10: {
         "name": "Preliminary action",
@@ -92,26 +92,18 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Pre-pasted wallpaper",
             "Preheated oven",
-            "Prefabricated housing components"
-        ]
+            "Prefabricated housing components",
+        ],
     },
     11: {
         "name": "Beforehand cushioning",
         "description": "Prepare emergency means beforehand to compensate for the relatively low reliability of an object",
-        "examples": [
-            "Backup parachute",
-            "Reserve tank",
-            "Emergency generator"
-        ]
+        "examples": ["Backup parachute", "Reserve tank", "Emergency generator"],
     },
     12: {
         "name": "Equipotentiality",
         "description": "Change the condition of the work in such a way that an object need not be raised or lowered",
-        "examples": [
-            "Locks in a canal",
-            "Spring loading",
-            "Self-leveling tables"
-        ]
+        "examples": ["Locks in a canal", "Spring loading", "Self-leveling tables"],
     },
     13: {
         "name": "The other way round",
@@ -119,8 +111,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Rotating the part instead of the tool",
             "Turning a container upside-down to empty it",
-            "Moving platform instead of moving person"
-        ]
+            "Moving platform instead of moving person",
+        ],
     },
     14: {
         "name": "Spheroidality – Curvature",
@@ -128,8 +120,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Dome structures for strength",
             "Aerodynamic vehicle shapes",
-            "Curved handles for better grip"
-        ]
+            "Curved handles for better grip",
+        ],
     },
     15: {
         "name": "Dynamics",
@@ -137,8 +129,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Adjustable steering wheel",
             "Flexible manufacturing system",
-            "Variable focus lenses"
-        ]
+            "Variable focus lenses",
+        ],
     },
     16: {
         "name": "Partial or excessive actions",
@@ -146,8 +138,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Overspray when painting, then remove excess",
             "Fill and then remove excess",
-            "Overscan in television"
-        ]
+            "Overscan in television",
+        ],
     },
     17: {
         "name": "Another dimension",
@@ -155,8 +147,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Multi-story parking or buildings",
             "3D integrated circuits",
-            "Spiral conveyor"
-        ]
+            "Spiral conveyor",
+        ],
     },
     18: {
         "name": "Mechanical vibration",
@@ -164,17 +156,13 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Electric toothbrush",
             "Vibrating concrete to remove air bubbles",
-            "Ultrasonic cleaning"
-        ]
+            "Ultrasonic cleaning",
+        ],
     },
     19: {
         "name": "Periodic action",
         "description": "Instead of continuous action, use periodic or pulsating actions",
-        "examples": [
-            "Pulsed welding",
-            "Hammer drill",
-            "Pulse jet engines"
-        ]
+        "examples": ["Pulsed welding", "Hammer drill", "Pulse jet engines"],
     },
     20: {
         "name": "Continuity of useful action",
@@ -182,8 +170,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Flywheel to maintain energy during non-productive periods",
             "Continuous operation manufacturing",
-            "Multi-cylinder engines for smooth operation"
-        ]
+            "Multi-cylinder engines for smooth operation",
+        ],
     },
     21: {
         "name": "Skipping",
@@ -191,8 +179,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Flash freezing of food",
             "High-speed cutting to avoid heat damage",
-            "Rapid prototyping technologies"
-        ]
+            "Rapid prototyping technologies",
+        ],
     },
     22: {
         "name": "Blessing in disguise",
@@ -200,8 +188,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Friction used for braking",
             "Waste heat for heating a building",
-            "Recycling harmful waste into useful products"
-        ]
+            "Recycling harmful waste into useful products",
+        ],
     },
     23: {
         "name": "Feedback",
@@ -209,8 +197,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Thermostat",
             "Automatic gain control",
-            "Quality control statistical processes"
-        ]
+            "Quality control statistical processes",
+        ],
     },
     24: {
         "name": "Intermediary",
@@ -218,8 +206,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Catalyst in chemical reactions",
             "Remote controls",
-            "Package delivery service"
-        ]
+            "Package delivery service",
+        ],
     },
     25: {
         "name": "Self-service",
@@ -227,8 +215,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Self-sharpening lawn mower blades",
             "Halogen lamp that cleans itself",
-            "Self-healing materials"
-        ]
+            "Self-healing materials",
+        ],
     },
     26: {
         "name": "Copying",
@@ -236,8 +224,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Virtual reality",
             "Acoustic testing using holography",
-            "Flight simulators"
-        ]
+            "Flight simulators",
+        ],
     },
     27: {
         "name": "Cheap short-living objects",
@@ -245,8 +233,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Disposable paper cups",
             "Single-use cameras",
-            "Breakaway components in crash safety"
-        ]
+            "Breakaway components in crash safety",
+        ],
     },
     28: {
         "name": "Mechanics substitution",
@@ -254,8 +242,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Using optical, acoustic, or thermal measurement instead of mechanical measurement",
             "Electronic nose to detect chemicals",
-            "Electric fields to detect changes"
-        ]
+            "Electric fields to detect changes",
+        ],
     },
     29: {
         "name": "Pneumatics and hydraulics",
@@ -263,8 +251,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Hydraulic lifts and presses",
             "Air cushions in shoes",
-            "Inflatable structures"
-        ]
+            "Inflatable structures",
+        ],
     },
     30: {
         "name": "Flexible shells and thin films",
@@ -272,8 +260,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Inflatable structures",
             "Heat shrinkable tubing",
-            "Thin film solar cells"
-        ]
+            "Thin film solar cells",
+        ],
     },
     31: {
         "name": "Porous materials",
@@ -281,17 +269,13 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Drilling holes in a structure to reduce weight",
             "Porous pavement for water drainage",
-            "Foam core structures"
-        ]
+            "Foam core structures",
+        ],
     },
     32: {
         "name": "Color changes",
         "description": "Change the color of an object or its external environment",
-        "examples": [
-            "Mood rings",
-            "Chameleon fabrics",
-            "Heat-sensitive inks"
-        ]
+        "examples": ["Mood rings", "Chameleon fabrics", "Heat-sensitive inks"],
     },
     33: {
         "name": "Homogeneity",
@@ -299,8 +283,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Diamond cutting diamond",
             "Borosilicate glass containers for acids",
-            "Self-healing materials of same composition"
-        ]
+            "Self-healing materials of same composition",
+        ],
     },
     34: {
         "name": "Discarding and recovering",
@@ -308,8 +292,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Dissolving medicine capsules",
             "Biodegradable packaging",
-            "Ablative heat shields"
-        ]
+            "Ablative heat shields",
+        ],
     },
     35: {
         "name": "Parameter changes",
@@ -317,8 +301,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Freezing water to change its properties",
             "Liquefying oxygen for storage",
-            "Converting powders to pellets"
-        ]
+            "Converting powders to pellets",
+        ],
     },
     36: {
         "name": "Phase transitions",
@@ -326,8 +310,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Heat pumps using phase transitions",
             "Freeze drying",
-            "Shape memory alloys"
-        ]
+            "Shape memory alloys",
+        ],
     },
     37: {
         "name": "Thermal expansion",
@@ -335,8 +319,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Thermal fit of parts",
             "Bimetallic thermostat",
-            "Thermohydraulic engine"
-        ]
+            "Thermohydraulic engine",
+        ],
     },
     38: {
         "name": "Strong oxidants",
@@ -344,8 +328,8 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Oxygen breathing for mountain climbers",
             "Enriched air for metal cutting",
-            "Ozone water treatment"
-        ]
+            "Ozone water treatment",
+        ],
     },
     39: {
         "name": "Inert atmosphere",
@@ -353,18 +337,14 @@ TRIZ_PRINCIPLES = {
         "examples": [
             "Argon atmosphere for welding reactive metals",
             "Nitrogen blanket for flammable liquids",
-            "Vacuum packaging for food"
-        ]
+            "Vacuum packaging for food",
+        ],
     },
     40: {
         "name": "Composite materials",
         "description": "Change from uniform to composite materials",
-        "examples": [
-            "Fiberglass",
-            "Carbon fiber composites",
-            "Reinforced concrete"
-        ]
-    }
+        "examples": ["Fiberglass", "Carbon fiber composites", "Reinforced concrete"],
+    },
 }
 
 # The 39 Engineering Parameters in TRIZ
@@ -407,7 +387,7 @@ ENGINEERING_PARAMETERS = {
     36: "Device complexity",
     37: "Difficulty of detecting and measuring",
     38: "Extent of automation",
-    39: "Productivity"
+    39: "Productivity",
 }
 
 # The 39x39 Contradiction Matrix
@@ -557,4 +537,4 @@ CONTRADICTION_MATRIX = {
 }
 
 # This is a simplified version for demonstration
-# A complete implementation would have all 39x39 matrix entries filled out 
+# A complete implementation would have all 39x39 matrix entries filled out

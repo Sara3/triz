@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { FileText, Clock, Trash, Edit, X, Info, FileCheck, UploadCloud, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -14,10 +13,61 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { MOCK_PATENTS } from '@/lib/mock-data';
 import { getAllAnalysisResults, getAnalysisResultsByPatentId, storeAnalysisResult } from '@/lib/triz-utils';
 import { formatDistance } from 'date-fns';
 import { PatentAnalysis } from '@/lib/types';
+
+// Local mock data for dashboard
+const MOCK_PATENTS = [
+  {
+    id: '1',
+    patent_number: 'US10123456B2',
+    filename: 'medical_device_patent.pdf',
+    title: 'Smart Medical Device for Patient Monitoring',
+    filing_date: '2019-05-12',
+    upload_date: '2023-06-15',
+    raw_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    abstract: 'A smart medical device for monitoring patient vital signs with improved accuracy and reduced power consumption.',
+    inventor: 'John Smith, Jane Doe',
+    assignee: 'MedTech Innovations, Inc.',
+    is_prior_art: false,
+    is_competitor: true,
+    keywords: 'patient monitoring, vital signs, low power, wireless',
+    status: 'analyzed'
+  },
+  {
+    id: '2',
+    patent_number: 'US10234567B2',
+    filename: 'surgical_tool_patent.pdf',
+    title: 'Minimally Invasive Surgical Tool with Enhanced Dexterity',
+    filing_date: '2020-02-28',
+    upload_date: '2023-07-10',
+    raw_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    abstract: 'A surgical tool designed for minimally invasive procedures with enhanced dexterity and precision while maintaining a compact form factor.',
+    inventor: 'Robert Johnson, Sarah Williams',
+    assignee: 'Surgical Precision, LLC',
+    is_prior_art: true,
+    is_competitor: false,
+    keywords: 'surgical tool, minimally invasive, precision, dexterity',
+    status: 'reviewed'
+  },
+  {
+    id: '4',
+    patent_number: 'US10456789B2',
+    filename: 'implantable_device_patent.pdf',
+    title: 'Implantable Medical Device with Extended Battery Life',
+    filing_date: '2020-11-20',
+    upload_date: '2023-09-12',
+    raw_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    abstract: 'An implantable medical device with an innovative power management system that significantly extends battery life while maintaining performance.',
+    inventor: 'David Thompson, Lisa Garcia',
+    assignee: 'ImplantTech, Inc.',
+    is_prior_art: false,
+    is_competitor: false,
+    keywords: 'implantable device, battery life, power management, medical',
+    status: 'analyzed'
+  }
+];
 
 const Dashboard: React.FC = () => {
   const [recentlyApproved, setRecentlyApproved] = useState<PatentAnalysis[]>([]);

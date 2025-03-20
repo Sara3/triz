@@ -20,7 +20,7 @@ from langchain.chat_models import init_chat_model
 load_dotenv()
 
 # Retrieve the API key
-api_key = os.getenv('OPENAI_API_KEY')
+api_key = os.getenv("OPENAI_API_KEY")
 
 # Define prompt template for TRIZ extraction
 prompt_template = PromptTemplate(
@@ -41,17 +41,20 @@ You are a seasoned expert in TRIZ analysis. Analyze the following patent text to
 
 Patent text:
 {patent_text}
-"""
+""",
 )
+
 
 def escape_curly_braces(text):
     return text.replace("{", "{{").replace("}", "}}")
+
 
 def analyze_patent_text(patent_text, llm):
     safe_text = escape_curly_braces(patent_text)
     prompt_str = prompt_template.template.replace("{patent_text}", safe_text)
     response = llm.invoke(prompt_str)
     return response.content
+
 
 def load_patent_files(directory_path):
     texts = []
@@ -60,6 +63,7 @@ def load_patent_files(directory_path):
         targeted_text = create_llm_content(file_path)
         texts.append({"filename": os.path.basename(file_path), "text": targeted_text})
     return texts
+
 
 def main():
     directory = "./patent_samples/"
@@ -78,10 +82,11 @@ def main():
         result = {
             "filename": patent["filename"],
             "analysis_date": datetime.now(UTC).isoformat(),
-            "triz_extraction": analysis_json
+            "triz_extraction": analysis_json,
         }
         results.append(result)
     print(json.dumps(results, indent=2))
+
 
 if __name__ == "__main__":
     main()
